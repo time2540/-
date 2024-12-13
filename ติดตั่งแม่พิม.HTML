@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การคำนวณน้ำหนักของวัสดุ</title>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .calculator {
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        .calculator h2 {
+            margin-bottom: 20px;
+            color: #00796b;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #00796b;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            background-color: #00796b;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #d32f2f;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator">
+        <h2>คำนวณน้ำหนักของวัสดุ</h2>
+        <div class="form-group">
+            <label for="feederLength">ระยะ Feeder (มม.):</label>
+            <input type="number" id="feederLength" required>
+        </div>
+        <div class="form-group">
+            <label for="thickness">ความหนา (มม.):</label>
+            <input type="number" id="thickness" required>
+        </div>
+        <div class="form-group">
+            <label for="width">ความกว้าง (มม.):</label>
+            <input type="number" id="width" required>
+        </div>
+        <div class="form-group">
+            <label for="material">ชนิดของวัสดุ:</label>
+            <select id="material" required>
+                <option value="7.85">SGCC (7.85 g/cm³)</option>
+                <option value="7.89">SUS (7.89 g/cm³)</option>
+            </select>
+        </div>
+        <button onclick="calculateWeight()">คำนวณน้ำหนัก</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function calculate
